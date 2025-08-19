@@ -1,26 +1,28 @@
 #include <stdio.h>
-
+//unsigned, long
 int main() {
 
     char letraEstado[10];
     char nomeCidade[50];
     int numeroCarta;
-    int quantidadeHabitantes;
+    unsigned long int quantidadeHabitantes;
     int turistico;
     float area;
     float pib;
     float densidadePopulacional = quantidadeHabitantes / area;
     float pibPercap = pib / quantidadeHabitantes;
+    float superPoder = (float) quantidadeHabitantes + (float) turistico + area + pib + pibPercap - densidadePopulacional;
     //dupliquei as variaveis para armazenas as duas cartas separatamente
     char letraEstado02[10];
     char nomeCidade02[50];
     int numeroCarta02;
-    int quantidadeHabitantes02;
+    unsigned long int quantidadeHabitantes02;
     int turistico02;
     float area02;
     float pib02;
     float densidadePopulacional02 = quantidadeHabitantes02 / area02;
     float pibPercap02 = pib02 / quantidadeHabitantes02;
+    float superPoder02 = (float) quantidadeHabitantes02 + (float) turistico02 + area02 + pib02 + pibPercap02 - densidadePopulacional02;
     
     
     printf("Olá, vamos jogar Super Trunfo?\n");
@@ -44,10 +46,10 @@ int main() {
     printf("Qual o PIB(Produto Intterno Bruto) da cidade?\n");
     scanf("%f", &pib);
 
-    printf("quantos pontos turisticos existem nessa cidade?\n");
+    printf("quantos pontos turisticos existem nessa cidade?\n\n\n");
     scanf("%d", &turistico);
     
-    printf("Primeira carta registrada, vamos partir para a proxima\n");
+    printf("Primeira carta registrada, vamos partir para a proxima\n\n");
 
     // dessa linha para baixo temos a repetição das perguntas para a coleta da segunda carta
 
@@ -106,6 +108,20 @@ int main() {
     printf("Número de pontos turísticos: %d\n", turistico02);
     printf("Densidade Populacional: %.2f hab/km^2", densidadePopulacional02);
     printf("PIB per Capita: %.2f Reais\n\n\n", pibPercap02);
+
+
+    printf("-------HORA DA BATALHA-------\n\n");
+    printf("(1) = Carta 1 | (0) = CArta 2\n");
+
+
+    printf("População: %d\n", quantidadeHabitantes > quantidadeHabitantes02);
+    printf("Area: %d\n", area > area02);
+    printf("PIB: %d\n", pib > pib02);
+    printf("Pontos turisticos: %d\n", turistico > turistico02);
+    printf("Densidade Populacional: %d\n", densidadePopulacional < densidadePopulacional02);
+    printf("PIB per Capita: %d\n", pibPercap > pibPercap02);
+    printf("Super Poder: %d", superPoder > superPoder02);
+
 
 
 
