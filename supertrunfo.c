@@ -111,19 +111,60 @@ int main() {
 
 
     printf("-------HORA DA BATALHA-------\n\n");
-    printf("(1) = Carta 1 | (0) = CArta 2\n");
 
+    //população
+    if (quantidadeHabitantes > quantidadeHabitantes02){
+        printf("A carta 1: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade, quantidadeHabitantes);
+    }else{
+        printf("A carta 2: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade02, quantidadeHabitantes02);
+    }
 
-    printf("População: %d\n", quantidadeHabitantes > quantidadeHabitantes02);
-    printf("Area: %d\n", area > area02);
-    printf("PIB: %d\n", pib > pib02);
-    printf("Pontos turisticos: %d\n", turistico > turistico02);
-    printf("Densidade Populacional: %d\n", densidadePopulacional < densidadePopulacional02);
-    printf("PIB per Capita: %d\n", pibPercap > pibPercap02);
-    printf("Super Poder: %d", superPoder > superPoder02);
+    //area
+    if(area > area02){
+        printf("A carta 1: %s ganhou com %.2f km^2 \n\n", nomeCidade, area);
+    }else{
+        printf("A carta 2: %s ganhou com %.2f km^2 \n\n", nomeCidade02, area02);
+    }
 
+    //pib
 
+    if(pib > pib02){
+        printf("A carta 1: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade, pib);
+    }else{
+        printf("A carta 2: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade02, pib02);
+    }
 
+    //pontos turisticos
+
+    if(turistico > turistico02){
+        printf("A carta 1: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade, turistico);
+    }else{
+        printf("A carta 2: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade02, turistico02);
+    }
+
+    //densidade populacional
+
+    if(densidadePopulacional < densidadePopulacional02){
+        printf("A carta 1: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade, densidadePopulacional);
+    }else{
+        printf("A carta 2: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade02, densidadePopulacional02);
+    }
+
+    //pib per capita
+
+    if(pibPercap > pibPercap02){
+        printf("A carta 1: %s ganhou com %.2f de pib per capita \n\n", nomeCidade, pibPercap);
+    }else{
+        printf("A carta 2: %s ganhou com %.2f de pib per capita \n\n", nomeCidade02, pibPercap02);
+    }
+
+    //superpoder
+
+    if(superPoder > superPoder02){
+        printf("A carta 1: %s ganhou com %.2f de super poder \n\n", nomeCidade, superPoder);
+    }else{
+        printf("A carta 2: %s ganhou com %.2f de super poder \n\n", nomeCidade02, superPoder02);
+    }
 
     return 0;
 }
