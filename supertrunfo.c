@@ -46,7 +46,7 @@ int main() {
     printf("Qual o PIB(Produto Intterno Bruto) da cidade?\n");
     scanf("%f", &pib);
 
-    printf("quantos pontos turisticos existem nessa cidade?\n\n\n");
+    printf("quantos pontos turisticos existem nessa cidade?\n");
     scanf("%d", &turistico);
     
     printf("Primeira carta registrada, vamos partir para a proxima\n\n");
@@ -111,59 +111,68 @@ int main() {
 
 
     printf("-------HORA DA BATALHA-------\n\n");
+    // atributo = 1(Populção), 2(Area), 3(PIB), 4(pontos turisticos), 5(densidade populacional), 6(PIB per capita), 7(Super poder).
+    int atributo = 3;
+    
+    switch (atributo){
+        case 1 ://população
+            if (quantidadeHabitantes > quantidadeHabitantes02){
+                printf("A carta 1: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade, quantidadeHabitantes);
+            }else{
+                printf("A carta 2: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade02, quantidadeHabitantes02);
+            }
+            break;
 
-    //população
-    if (quantidadeHabitantes > quantidadeHabitantes02){
-        printf("A carta 1: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade, quantidadeHabitantes);
-    }else{
-        printf("A carta 2: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade02, quantidadeHabitantes02);
-    }
+        case 2: //area
+            if(area > area02){
+                printf("A carta 1: %s ganhou com %.2f km^2 \n\n", nomeCidade, area);
+            }else{
+                printf("A carta 2: %s ganhou com %.2f km^2 \n\n", nomeCidade02, area02);
+            }
+            break;
 
-    //area
-    if(area > area02){
-        printf("A carta 1: %s ganhou com %.2f km^2 \n\n", nomeCidade, area);
-    }else{
-        printf("A carta 2: %s ganhou com %.2f km^2 \n\n", nomeCidade02, area02);
-    }
+        case 3://pib
+            if(pib > pib02){
+                printf("A carta 1: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade, pib);
+            }else{
+                printf("A carta 2: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade02, pib02);
+            }
+            break;
 
-    //pib
+        case 4://pontos turisticos
+            if(turistico > turistico02){
+                printf("A carta 1: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade, turistico);
+            }else{
+                printf("A carta 2: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade02, turistico02);
+            }
+            break;
 
-    if(pib > pib02){
-        printf("A carta 1: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade, pib);
-    }else{
-        printf("A carta 2: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade02, pib02);
-    }
+        case 5://densidade populacional
+            if(densidadePopulacional < densidadePopulacional02){
+                printf("A carta 1: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade, densidadePopulacional);
+            }else{
+                printf("A carta 2: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade02, densidadePopulacional02);
+            }
+            break;
 
-    //pontos turisticos
+        case 6://pib per capita
+            if(pibPercap > pibPercap02){
+                printf("A carta 1: %s ganhou com %.2f de pib per capita \n\n", nomeCidade, pibPercap);
+            }else{
+                printf("A carta 2: %s ganhou com %.2f de pib per capita \n\n", nomeCidade02, pibPercap02);
+            }
+            break;
 
-    if(turistico > turistico02){
-        printf("A carta 1: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade, turistico);
-    }else{
-        printf("A carta 2: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade02, turistico02);
-    }
+        case 7://superpoder
+            if(superPoder > superPoder02){
+                printf("A carta 1: %s ganhou com %.2f de super poder \n\n", nomeCidade, superPoder);
+            }else{
+                printf("A carta 2: %s ganhou com %.2f de super poder \n\n", nomeCidade02, superPoder02);
+            }
+            break;
+        default:
+            printf("Opção invalida");
 
-    //densidade populacional
-
-    if(densidadePopulacional < densidadePopulacional02){
-        printf("A carta 1: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade, densidadePopulacional);
-    }else{
-        printf("A carta 2: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade02, densidadePopulacional02);
-    }
-
-    //pib per capita
-
-    if(pibPercap > pibPercap02){
-        printf("A carta 1: %s ganhou com %.2f de pib per capita \n\n", nomeCidade, pibPercap);
-    }else{
-        printf("A carta 2: %s ganhou com %.2f de pib per capita \n\n", nomeCidade02, pibPercap02);
-    }
-
-    //superpoder
-
-    if(superPoder > superPoder02){
-        printf("A carta 1: %s ganhou com %.2f de super poder \n\n", nomeCidade, superPoder);
-    }else{
-        printf("A carta 2: %s ganhou com %.2f de super poder \n\n", nomeCidade02, superPoder02);
     }
 
     return 0;
