@@ -1,7 +1,6 @@
 #include <stdio.h>
 //unsigned, long
 int main() {
-
     char letraEstado[10];
     char nomeCidade[50];
     int numeroCarta;
@@ -75,7 +74,7 @@ int main() {
     printf("quantos pontos turisticos existem nessa cidade?\n");
     scanf("%d", &turistico02);
 
-    /*
+    /* apenas um rascunho para inserir as informações de acordo com o pedido
     Carta 1:
     Estado: A
     Código: A01
@@ -85,91 +84,120 @@ int main() {
     PIB: 699.28 bilhões de reais
     Número de Pontos Turísticos: 50
     */
-    printf("carta 1: \n");
-    printf("Estado: %s\n", letraEstado);
-    printf("Codigo: %s0%d\n", letraEstado, numeroCarta);
-    printf("Nome da cidade: %s\n", nomeCidade);
-    printf("Populção: %d\n", quantidadeHabitantes);
-    printf("Área: %.2f km^2\n ", area);
-    printf("PIB: %.2f bilhões de reais\n", pib);
-    printf("Número de pontos turísticos: %d\n", turistico);
-    printf("Densidade Populacional: %.2f hab/km^2\n", densidadePopulacional);
-    printf("PIB per Capita: %.2f Reais\n\n\n", pibPercap);
-
-   // sugunda parte de exibição das informações
-
-    printf("carta 2: \n");
-    printf("Estado: %s\n", letraEstado02);
-    printf("Codigo: %s0%d\n", letraEstado02, numeroCarta02);
-    printf("Nome da cidade: %s\n", nomeCidade02);
-    printf("Populção: %d\n", quantidadeHabitantes02);
-    printf("Área: %.2f km^2\n ", area02);
-    printf("PIB: %.2f bilhões de reais\n", pib02);
-    printf("Número de pontos turísticos: %d\n", turistico02);
-    printf("Densidade Populacional: %.2f hab/km^2", densidadePopulacional02);
-    printf("PIB per Capita: %.2f Reais\n\n\n", pibPercap02);
-
+    int atributo;
 
     printf("-------HORA DA BATALHA-------\n\n");
     // atributo = 1(Populção), 2(Area), 3(PIB), 4(pontos turisticos), 5(densidade populacional), 6(PIB per capita), 7(Super poder).
-    int atributo = 3;
+    printf(" QUAL OPÇÂO VOCÊ DESEJA?   \n");
+    printf("-----------------------------\n");
+    printf("| 1. nomes/atributos        |\n");
+    printf("| 2. Area 3(PIB)            |\n");
+    printf("| 3. PIB                    |\n");
+    printf("| 4. pontos turisticos      |\n");
+    printf("| 5. Populção               |\n");
+    printf("| 6. densidade populacional |\n");
+    printf("| 7. PIB per capita         |\n");
+    printf("| 8. Super poder            |\n");
+    printf("-----------------------------\n\n");
+    printf("Opção N*: \n");
+    scanf("%d", &atributo);
     
     switch (atributo){
-        case 1 ://população
+        case 1:// nome/atributos
+            printf("carta 1: \n");
+            printf("Estado: %s\n", letraEstado);
+            printf("Codigo: %s0%d\n", letraEstado, numeroCarta);
+            printf("Nome da cidade: %s\n", nomeCidade);
+            printf("Populção: %d\n", quantidadeHabitantes);
+            printf("Área: %.2f km^2\n ", area);
+            printf("PIB: %.2f bilhões de reais\n", pib);
+            printf("Número de pontos turísticos: %d\n", turistico);
+            printf("Densidade Populacional: %.2f hab/km^2\n", densidadePopulacional);
+            printf("PIB per Capita: %.2f Reais\n\n\n", pibPercap);
+
+            printf("carta 2: \n");
+            printf("Estado: %s\n", letraEstado02);
+            printf("Codigo: %s0%d\n", letraEstado02, numeroCarta02);
+            printf("Nome da cidade: %s\n", nomeCidade02);
+            printf("Populção: %d\n", quantidadeHabitantes02);
+            printf("Área: %.2f km^2\n ", area02);
+            printf("PIB: %.2f bilhões de reais\n", pib02);
+            printf("Número de pontos turísticos: %d\n", turistico02);
+            printf("Densidade Populacional: %.2f hab/km^2", densidadePopulacional02);
+            printf("PIB per Capita: %.2f Reais\n\n\n", pibPercap02);
+            break;
+        case 2:// area
+            if (area > area02){
+                printf("A carta 1: %s ganhou com %.2f km^2 \n\n", nomeCidade, area);
+            } else if (area < area02) {
+                printf("A carta 2: %s ganhou com %.2f km^2 \n\n", nomeCidade02, area02);
+            } else {
+                printf("Empate");
+            }
+            break;
+
+        case 3:// pib
+            if (pib > pib02){
+                printf("A carta 1: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade, pib);
+            } else if (pib < pib02) {
+                printf("A carta 2: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade02, pib02);
+            } else {
+                printf("Empate");
+            }
+            break;
+
+        case 4:// pontos turisticos
+            if (turistico > turistico02){
+                printf("A carta 1: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade, turistico);
+            } else if (turistico < turistico02) {
+                printf("A carta 2: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade02, turistico02);
+            } else {
+                printf("Empate");
+            }
+            break;
+
+        case 5:// Populaçâo 
+
             if (quantidadeHabitantes > quantidadeHabitantes02){
                 printf("A carta 1: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade, quantidadeHabitantes);
-            }else{
+            } else if (quantidadeHabitantes < quantidadeHabitantes02) {
                 printf("A carta 2: %s ganhou com %.2f, numero de habitantes \n\n", nomeCidade02, quantidadeHabitantes02);
+            } else {
+                printf("Empate");
             }
             break;
 
-        case 2: //area
-            if(area > area02){
-                printf("A carta 1: %s ganhou com %.2f km^2 \n\n", nomeCidade, area);
-            }else{
-                printf("A carta 2: %s ganhou com %.2f km^2 \n\n", nomeCidade02, area02);
-            }
-            break;
-
-        case 3://pib
-            if(pib > pib02){
-                printf("A carta 1: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade, pib);
-            }else{
-                printf("A carta 2: %s ganhou com %.2f milhões de produto interno bruto \n\n", nomeCidade02, pib02);
-            }
-            break;
-
-        case 4://pontos turisticos
-            if(turistico > turistico02){
-                printf("A carta 1: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade, turistico);
-            }else{
-                printf("A carta 2: %s ganhou com %.2f pontos turisticos \n\n", nomeCidade02, turistico02);
-            }
-            break;
-
-        case 5://densidade populacional
-            if(densidadePopulacional < densidadePopulacional02){
+            
+        case 6:// densidade populacional
+            if (densidadePopulacional < densidadePopulacional02){
                 printf("A carta 1: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade, densidadePopulacional);
-            }else{
+            } else if (densidadePopulacional > densidadePopulacional02) {
                 printf("A carta 2: %s ganhou com %.2f de densidade populacional \n\n", nomeCidade02, densidadePopulacional02);
+            } else {
+                printf("Empate");
             }
             break;
-
-        case 6://pib per capita
-            if(pibPercap > pibPercap02){
+            
+        case 7:// pib per capita
+            if (pibPercap > pibPercap02){
                 printf("A carta 1: %s ganhou com %.2f de pib per capita \n\n", nomeCidade, pibPercap);
-            }else{
+            } else if (pibPercap < pibPercap02) {
                 printf("A carta 2: %s ganhou com %.2f de pib per capita \n\n", nomeCidade02, pibPercap02);
+            } else {
+                printf("Empate");
             }
             break;
 
-        case 7://superpoder
-            if(superPoder > superPoder02){
+            case 8:// super poder
+            if (superPoder > superPoder02){
                 printf("A carta 1: %s ganhou com %.2f de super poder \n\n", nomeCidade, superPoder);
-            }else{
+            } else if (superPoder < superPoder02) {
                 printf("A carta 2: %s ganhou com %.2f de super poder \n\n", nomeCidade02, superPoder02);
+            } else {
+                printf("Empate");
             }
             break;
+            
         default:
             printf("Opção invalida");
 
